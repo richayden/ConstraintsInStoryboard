@@ -13,6 +13,7 @@
 		C14A076F1A955BD500C84796 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14A076E1A955BD500C84796 /* Images.xcassets */; };
 		C14A07721A955BD500C84796 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14A07701A955BD500C84796 /* LaunchScreen.xib */; };
 		C14A077E1A955BD500C84796 /* ConstraintsInStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14A077D1A955BD500C84796 /* ConstraintsInStoryboardTests.swift */; };
+		C14A07881A956C5000C84796 /* ProgramiticConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14A07871A956C5000C84796 /* ProgramiticConstraintsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C14A07771A955BD500C84796 /* ConstraintsInStoryboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstraintsInStoryboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14A077C1A955BD500C84796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C14A077D1A955BD500C84796 /* ConstraintsInStoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsInStoryboardTests.swift; sourceTree = "<group>"; };
+		C14A07871A956C5000C84796 /* ProgramiticConstraintsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramiticConstraintsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C14A076E1A955BD500C84796 /* Images.xcassets */,
 				C14A07701A955BD500C84796 /* LaunchScreen.xib */,
 				C14A07651A955BD500C84796 /* Supporting Files */,
+				C14A07871A956C5000C84796 /* ProgramiticConstraintsViewController.swift */,
 			);
 			path = ConstraintsInStoryboard;
 			sourceTree = "<group>";
@@ -156,6 +159,8 @@
 		C14A075A1A955BD500C84796 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Pace;
 				TargetAttributes = {
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C14A076A1A955BD500C84796 /* ViewController.swift in Sources */,
+				C14A07881A956C5000C84796 /* ProgramiticConstraintsViewController.swift in Sources */,
 				C14A07681A955BD500C84796 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +411,7 @@
 				C14A07831A955BD500C84796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C14A07841A955BD500C84796 /* Build configuration list for PBXNativeTarget "ConstraintsInStoryboardTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +420,7 @@
 				C14A07861A955BD500C84796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
