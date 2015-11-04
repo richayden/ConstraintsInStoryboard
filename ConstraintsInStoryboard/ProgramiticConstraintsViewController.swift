@@ -10,6 +10,8 @@ import UIKit
 
 class ProgramiticConstraintsViewController: UIViewController {
     
+    var heightConstraint:NSLayoutConstraint?
+    var cyanView:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,43 +26,54 @@ class ProgramiticConstraintsViewController: UIViewController {
     
     func setupViews() {
         
-        let cyanView = UIView(frame: CGRect(x: 100,y: 200,width: 100,height: 100))
-        cyanView.backgroundColor=UIColor.cyanColor()
-        cyanView.translatesAutoresizingMaskIntoConstraints = false
+        cyanView = UIView(frame: CGRect(x: 100,y: 200,width: 100,height: 100))
+        cyanView!.backgroundColor=UIColor.cyanColor()
+        cyanView!.translatesAutoresizingMaskIntoConstraints = false
         self.view.translatesAutoresizingMaskIntoConstraints = false
 
-        self.view.addSubview(cyanView)
+        self.view.addSubview(cyanView!)
         
-        cyanView.addConstraint(NSLayoutConstraint(
-            item: cyanView,
-            attribute: NSLayoutAttribute.Width,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: nil,
-            attribute:
-            NSLayoutAttribute.NotAnAttribute,
-            multiplier: 1.0,
-            constant: 25.0))
+//        cyanView.addConstraint(NSLayoutConstraint(
+//            item: cyanView,
+//            attribute: NSLayoutAttribute.Width,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: nil,
+//            attribute:
+//            NSLayoutAttribute.NotAnAttribute,
+//            multiplier: 1.0,
+//            constant: 25.0))
         
-        cyanView.addConstraint(NSLayoutConstraint(
-            item: cyanView,
+        heightConstraint = NSLayoutConstraint(
+            item: cyanView!,
             attribute: NSLayoutAttribute.Height,
             relatedBy: NSLayoutRelation.Equal,
             toItem: nil,
             attribute: NSLayoutAttribute.NotAnAttribute,
             multiplier: 1.0,
-            constant: 25.0))
+            constant: 250.0)
         
+        cyanView!.addConstraint(heightConstraint!)
+
         self.view.addConstraint(NSLayoutConstraint(
-            item: cyanView,
+            item: cyanView!,
             attribute: NSLayoutAttribute.Right,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
             attribute: NSLayoutAttribute.Right,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -15.0))
         
         self.view.addConstraint(NSLayoutConstraint(
-            item: cyanView,
+            item: cyanView!,
+            attribute: NSLayoutAttribute.Left,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: self.view,
+            attribute: NSLayoutAttribute.Left,
+            multiplier: 1.0,
+            constant: 15.0))
+        
+        self.view.addConstraint(NSLayoutConstraint(
+            item: cyanView!,
             attribute: NSLayoutAttribute.Bottom,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
@@ -69,6 +82,38 @@ class ProgramiticConstraintsViewController: UIViewController {
             constant: 0.0))
         
 
+    }
+    
+    @IBAction func shortButton(sender: AnyObject) {
+   
+        cyanView!.removeConstraint(heightConstraint!)
+
+        heightConstraint = NSLayoutConstraint(
+            item: cyanView!,
+            attribute: NSLayoutAttribute.Height,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: 50.0)
+        
+        cyanView!.addConstraint(heightConstraint!)
+        
+    }
+    
+    @IBAction func tallButton(sender: AnyObject) {
+        cyanView!.removeConstraint(heightConstraint!)
+        
+        heightConstraint = NSLayoutConstraint(
+            item: cyanView!,
+            attribute: NSLayoutAttribute.Height,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: 250.0)
+        
+        cyanView!.addConstraint(heightConstraint!)
     }
     
     func setupConstraints() {
