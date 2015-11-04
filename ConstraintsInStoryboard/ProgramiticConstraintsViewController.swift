@@ -31,7 +31,7 @@ class ProgramiticConstraintsViewController: UIViewController {
         imageHeightConstraint.constant = 100
         
         cyanView = UIView(frame: CGRect(x: 100,y: 200,width: 100,height: 100))
-        cyanView!.backgroundColor=UIColor.cyanColor()
+        cyanView!.backgroundColor=UIColor.blueColor()
         cyanView!.translatesAutoresizingMaskIntoConstraints = false
         self.view.translatesAutoresizingMaskIntoConstraints = false
 
