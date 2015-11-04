@@ -10,6 +10,8 @@ import UIKit
 
 class ProgramiticConstraintsViewController: UIViewController {
     
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+
     var heightConstraint:NSLayoutConstraint?
     var cyanView:UIView?
     
@@ -25,6 +27,8 @@ class ProgramiticConstraintsViewController: UIViewController {
     }
     
     func setupViews() {
+        
+        imageHeightConstraint.constant = 100
         
         cyanView = UIView(frame: CGRect(x: 100,y: 200,width: 100,height: 100))
         cyanView!.backgroundColor=UIColor.cyanColor()
@@ -85,7 +89,9 @@ class ProgramiticConstraintsViewController: UIViewController {
     }
     
     @IBAction func shortButton(sender: AnyObject) {
-   
+ 
+        imageHeightConstraint.constant = 100
+
         cyanView!.removeConstraint(heightConstraint!)
 
         heightConstraint = NSLayoutConstraint(
@@ -102,18 +108,23 @@ class ProgramiticConstraintsViewController: UIViewController {
     }
     
     @IBAction func tallButton(sender: AnyObject) {
-        cyanView!.removeConstraint(heightConstraint!)
+//        cyanView!.removeConstraint(heightConstraint!)
+//        
+//        heightConstraint = NSLayoutConstraint(
+//            item: cyanView!,
+//            attribute: NSLayoutAttribute.Height,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: nil,
+//            attribute: NSLayoutAttribute.NotAnAttribute,
+//            multiplier: 1.0,
+//            constant: 250.0)
+//        
+//        cyanView!.addConstraint(heightConstraint!)
+ 
+        imageHeightConstraint.constant = 200
+
+        heightConstraint?.constant = 250
         
-        heightConstraint = NSLayoutConstraint(
-            item: cyanView!,
-            attribute: NSLayoutAttribute.Height,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: nil,
-            attribute: NSLayoutAttribute.NotAnAttribute,
-            multiplier: 1.0,
-            constant: 250.0)
-        
-        cyanView!.addConstraint(heightConstraint!)
     }
     
     func setupConstraints() {
