@@ -28,7 +28,7 @@ class ProgramiticConstraintsViewController: UIViewController {
     
     func setupViews() {
         
-        imageHeightConstraint.constant = 100
+        imageHeightConstraint.constant = 10
         
         cyanView = UIView(frame: CGRect(x: 100,y: 200,width: 100,height: 100))
         cyanView!.backgroundColor=UIColor.cyanColor()
